@@ -8,7 +8,11 @@
     <script type="text/javascript">
         var browser = navigator.userAgent;
         var answer = 0;
-        var x = prompt("Введите ваш X");
+        var x = Number(prompt("Введите ваш X"));
+        while(!(/^([1-9]\d*)$/.test(x))){
+            var x = prompt("Вы не ввели число, введите ваш X");
+        }
+        var str;
         if(browser.indexOf("Firefox") > -1){
         answer = Math.sin(x);
         str = "sin"+x+" = "+answer;
@@ -17,7 +21,7 @@
         answer = (x**3)/3;
         str = x+" ** 3 / 3 = "+answer;
         }
-        else if(browser.indexOf("Opera") > -1){
+        else if(browser.indexOf('OPR') > -1){
         answer = 10 * x;
         str = "10 * "+x+" = "+answer;
         }
